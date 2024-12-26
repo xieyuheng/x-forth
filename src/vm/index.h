@@ -5,5 +5,5 @@
 #include "ram.h"
 #include "frame.h"
 #include "execute.h"
-#include "xemu.h"
-#include "xemu_test.h"
+#include "vm.h"
+#include "vm_test.h"

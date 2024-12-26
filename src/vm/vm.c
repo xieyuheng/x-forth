@@ -1,8 +1,8 @@
 #include "index.h"
 
-xemu_t *
-xemu_new(size_t ram_size) {
-    xemu_t *self = new(xemu_t);
+vm_t *
+vm_new(size_t ram_size) {
+    vm_t *self = new(vm_t);
     self->ram = ram_new(ram_size);
     self->value_stack = stack_new();
     self->return_stack = stack_new_with((destroy_fn_t *) frame_destroy);
@@ -10,10 +10,10 @@ xemu_new(size_t ram_size) {
 }
 
 void
-xemu_destroy(xemu_t **self_pointer) {
+vm_destroy(vm_t **self_pointer) {
     assert(self_pointer);
     if (*self_pointer) {
-        xemu_t *self = *self_pointer;
+        vm_t *self = *self_pointer;
         stack_destroy(&self->value_stack);
         stack_destroy(&self->return_stack);
         ram_destroy(&self->ram);
@@ -23,7 +23,7 @@ xemu_destroy(xemu_t **self_pointer) {
 }
 
 void
-xemu_step(xemu_t *self) {
+vm_step(vm_t *self) {
     if (stack_is_empty(self->return_stack))
         return;
 
@@ -36,24 +36,24 @@ xemu_step(xemu_t *self) {
 }
 
 void
-xemu_run_until(xemu_t *self, size_t base_length) {
+vm_run_until(vm_t *self, size_t base_length) {
     while (stack_length(self->return_stack) > base_length) {
-        xemu_step(self);
+        vm_step(self);
     }
 }
 
 void
-xemu_run(xemu_t *self) {
+vm_run(vm_t *self) {
     while (!stack_is_empty(self->return_stack)) {
-        xemu_step(self);
+        vm_step(self);
     }
 }
 
 void
-xemu_emu(const blob_t *blob) {
-    xemu_t *self = xemu_new(blob_size(blob));
+vm_emu(const blob_t *blob) {
+    vm_t *self = vm_new(blob_size(blob));
     blob_copy_into(blob, self->ram->bytes);
     stack_push(self->return_stack, frame_new(0));
-    xemu_run(self);
-    xemu_destroy(&self);
+    vm_run(self);
+    vm_destroy(&self);
 }
