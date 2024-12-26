@@ -8,7 +8,7 @@ int
 main(int argc, char *argv[]) {
     setup_io();
 
-    commander_t *commander = commander_new("app", APP_VERSION, argc, argv);
+    commander_t *commander = commander_new("app", XFORTH_VERSION, argc, argv);
 
     commander_use(commander, font_edit_command);
     commander_use(commander, image_view_command);
