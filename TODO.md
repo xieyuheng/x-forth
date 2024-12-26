@@ -1,1 +1,1 @@
-copy vm from xvm's xemu
+rename xemu to vm
