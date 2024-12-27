@@ -1,5 +1,8 @@
 # vm
 
-[vm] remove the idea of opcode -- use dictionary and word
-
-- 也许应该用 dictionary 和 definition 这两个概念
+[vm] remove the idea of opcode -- use dictionary and definition
+[vm] remove ram
+[vm] vm has dict
+[vm] vm has token_list
+[vm] primitive_def
+[vm] function_def
