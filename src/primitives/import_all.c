@@ -2,5 +2,5 @@
 
 void
 import_all(mod_t *mod) {
-    (void) mod;
+    define_constant(mod, "null", xnull);
 }

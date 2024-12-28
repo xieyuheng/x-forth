@@ -1,13 +1,19 @@
+fix double free bug
+
 # primitives
 
-primitives/bool -- handle constant
-primitives/null -- handle constant
+primitives/bool -- true false
+primitives/bool -- and or not
 
-primitives/testing -- x_ok
-primitives/stack
+primitives/value -- eq
+primitives/testing -- ok
+primitives/stack -- dup swap drop rot over tuck
 
-primitives/int
-primitives/float
+primitives/int -- add sub mul div mod
+primitives/float -- fadd fsub fmul fdiv fmod
+
+primitives/int -- int-to-float
+primitives/float -- float-to-int
 
 # lang
 
