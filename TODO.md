@@ -1,7 +1,5 @@
 # vm
 
-[vm] function_def
-
 primitives/x_int
 primitives/x_float
 primitives/x_bool
