@@ -1,9 +1,10 @@
 #include "index.h"
 
 void
-execute(vm_t *vm, frame_t *frame) {
+execute(vm_t *vm, frame_t *frame, op_t *op) {
     (void) vm;
     (void) frame;
+    (void) op;
 
     // switch (opcode) {
     // case OP_NOP: {

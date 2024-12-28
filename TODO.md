@@ -1,6 +1,5 @@
 # vm
 
-[vm] fix vm_step
 [vm] function_def
 
 primitives/x_int
