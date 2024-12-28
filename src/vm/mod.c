@@ -25,3 +25,8 @@ void
 mod_define(mod_t *self, def_t *def) {
     assert(hash_set(self->def_hash, string_copy(def_name(def)), def));
 }
+
+const def_t *
+mod_find_def(const mod_t *self, const char *name) {
+    return hash_get(self->def_hash, name);
+}

@@ -1,6 +1,5 @@
 # lang
 
-[lang] execute_token
 [lang] test the outer interpreter
 
 # primitives
