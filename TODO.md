@@ -1,12 +1,9 @@
 # lang
 
-[lang] move execute to lang
+ambr run_vm_until run_vm_until
+ambr run_vm run_vm
 
-ambr vm_step step_vm
-ambr vm_run_until run_vm_until
-ambr vm_run run_vm
-
-[lang] move step and run to lang
+[lang] move execute and step and run to lang
 
 # vm
 
