@@ -1,7 +1,5 @@
 # vm
 
-[vm] literal_op_t
-
 [vm] function_t -- has an array of operation
 [vm] frame has function
 [vm] fix frame_fetch_value
@@ -21,6 +19,7 @@ define_primitive_3
 [vm] vm_execute_token
 
 [vm] test the outer interpreter
+[vm] op_print -- fix for literal
 
 # value
 
