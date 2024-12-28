@@ -1,7 +1,3 @@
-# lang
-
-[lang] test the outer interpreter
-
 # primitives
 
 primitives/x_int
