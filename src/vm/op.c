@@ -60,15 +60,14 @@ op_print(const op_t *unknown_op, file_t *file) {
     switch (unknown_op->kind) {
     case CALL_OP: {
         call_op_t *op = (call_op_t *) unknown_op;
-        fprintf(file, "%s", def_name(op->def));
+        fprintf(file, "CALL %s", def_name(op->def));
         return;
     }
 
     case LITERAL_OP: {
         literal_op_t *op = (literal_op_t *) unknown_op;
-        // TODO
-        (void) op;
-        fprintf(file, "<literal>");
+        fprintf(file, "LITERAL ");
+        value_print(op->value, file);        
         return;
     }
     }
