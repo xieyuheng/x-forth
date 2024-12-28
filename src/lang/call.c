@@ -12,5 +12,10 @@ call(vm_t *vm, const def_t *def) {
         call_function(vm, def->as_function_def);
         return;
     }
+
+    case CONSTANT_DEF: {
+        call_constant(vm, def->as_constant_def);
+        return;
+    }    
     }
 }

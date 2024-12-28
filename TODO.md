@@ -1,4 +1,3 @@
-[vm] constant_def
 [vm] define_constant
 
 [lang] execute_token -- handle literal int and float
@@ -13,6 +12,8 @@ primitives/stack
 
 primitives/int
 primitives/float
+
+import_all
 
 # vm
 
