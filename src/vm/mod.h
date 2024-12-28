@@ -5,6 +5,6 @@
 
 struct mod_t {
     const char *src;
-    const char *string;
+    const char *code;
     hash_t *def_hash;
 };
