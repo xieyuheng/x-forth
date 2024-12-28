@@ -4,7 +4,7 @@ void
 execute(vm_t *vm, frame_t *frame) {
     (void) vm;
     (void) frame;
-    
+
     // switch (opcode) {
     // case OP_NOP: {
     //     return;
