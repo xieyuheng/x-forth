@@ -1,4 +1,3 @@
-[vm] define_constant
 [lang] execute_token -- handle literal int and float
 
 # primitives
