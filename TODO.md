@@ -1,7 +1,5 @@
 # vm
 
-[vm] def_t -- union
-
 [vm] fix mod_new -- for def_t
 [vm] fix mod_destroy -- for def_t
 
