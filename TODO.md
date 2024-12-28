@@ -1,5 +1,3 @@
-remove vm_test
-
 # lang
 
 [lang] setup lang/
