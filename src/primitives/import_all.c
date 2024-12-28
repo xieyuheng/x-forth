@@ -35,7 +35,7 @@ import_all(mod_t *mod) {
     define_primitive_2_fn(mod, "mul", xint_mul);
     define_primitive_2_fn(mod, "div", xint_div);
     define_primitive_2_fn(mod, "mod", xint_mod);
-    // define_primitive_1_fn(mod, "int-to-float", x_int_to_float);
+    define_primitive_1_fn(mod, "int-to-float", xint_to_xfloat);
 
     // float
 
@@ -44,5 +44,5 @@ import_all(mod_t *mod) {
     define_primitive_2_fn(mod, "fmul", xfloat_mul);
     define_primitive_2_fn(mod, "fdiv", xfloat_div);
     define_primitive_2_fn(mod, "fmod", xfloat_mod);
-    // define_primitive_1_fn(mod, "float-to-int", x_float_to_int);
+    define_primitive_1_fn(mod, "float-to-int", xfloat_to_xint);
 }

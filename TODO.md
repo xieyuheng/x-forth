@@ -1,5 +1,4 @@
-primitives/int -- int-to-float
-primitives/float -- float-to-int
+vm should not have err and out
 
 primitives/testing -- ok -- call vm_print
 
