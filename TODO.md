@@ -1,7 +1,5 @@
 # primitives
 
-primitives/testing -- ok
-
 primitives/bool -- and or not
 
 primitives/value -- eq
@@ -14,6 +12,7 @@ primitives/float -- fadd fsub fmul fdiv fmod
 primitives/int -- int-to-float
 primitives/float -- float-to-int
 
+primitives/testing -- ok -- call vm_print
 # lang
 
 [lang] execute_token -- handle literal int and float
