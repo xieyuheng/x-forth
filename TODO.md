@@ -1,10 +1,3 @@
-# lang
-
-ambr run_vm_until run_vm_until
-ambr run_vm run_vm
-
-[lang] move execute and step and run to lang
-
 # vm
 
 [vm] define_primitive_vm_fn

@@ -4,7 +4,6 @@
 #include "types.h"
 #include "mod.h"
 #include "frame.h"
-#include "execute.h"
 #include "function.h"
 #include "function_def.h"
 #include "primitive_def.h"
