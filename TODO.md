@@ -1,10 +1,18 @@
+[vm] constant_def
+[vm] define_constant
+
+[lang] execute_token -- handle literal int and float
+
 # primitives
 
-primitives/x_int
-primitives/x_float
-primitives/x_bool
-primitives/x_stack
-primitives/x_testing -- x_ok
+primitives/bool -- handle constant
+primitives/null -- handle constant
+
+primitives/testing -- x_ok
+primitives/stack
+
+primitives/int
+primitives/float
 
 # vm
 
