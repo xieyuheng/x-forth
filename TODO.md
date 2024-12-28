@@ -5,6 +5,8 @@
 
 [vm] primitive_t
 
+[vm] test the outer interpreter
+
 [vm] function_t
 
 [vm] frame has function
