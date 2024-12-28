@@ -1,7 +1,5 @@
 # primitives
 
-setup import_all
-
 primitives/bool -- handle constant
 primitives/null -- handle constant
 

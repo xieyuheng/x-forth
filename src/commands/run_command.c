@@ -18,7 +18,7 @@ run_file(const char *path) {
     fclose(file);
 
     mod_t *mod = mod_new(path, code);
-    // import_primitives(mod);
+    import_all(mod);
     vm_t *vm = vm_new(mod);
 
     execute_vm(vm);
