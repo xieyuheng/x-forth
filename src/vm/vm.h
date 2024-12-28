@@ -2,6 +2,7 @@
 
 struct vm_t {
     mod_t *mod;
+    list_t *token_list;
     stack_t *value_stack;
     stack_t *return_stack;
     file_t *out;

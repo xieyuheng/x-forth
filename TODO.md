@@ -1,7 +1,14 @@
 # vm
 
-[vm] vm has token_list
 [vm] vm_execute_token
+primitives/ one function one x_int_add
+
+primitives/x_int
+primitives/x_float
+primitives/x_bool
+primitives/x_stack
+primitives/x_vm -- x_ok
+
 [vm] test the outer interpreter
 
 # vm
