@@ -1,6 +1,6 @@
 # lang
 
-[lang] fix execute_operation
+[lang] execute_operation -- handle CALL_OP
 [lang] execute_token
 
 [lang] test the outer interpreter
