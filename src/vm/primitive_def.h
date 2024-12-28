@@ -30,4 +30,10 @@ struct primitive_def_t {
 };
 
 primitive_def_t *primitive_def_from_vm_fn(const char *name, primitive_vm_fn_t *primitive_vm_fn);
+primitive_def_t *primitive_def_from_0_fn(const char *name, primitive_0_fn_t *primitive_0_fn);
+primitive_def_t *primitive_def_from_1_fn(const char *name, primitive_1_fn_t *primitive_1_fn);
+primitive_def_t *primitive_def_from_2_fn(const char *name, primitive_2_fn_t *primitive_2_fn);
+primitive_def_t *primitive_def_from_3_fn(const char *name, primitive_3_fn_t *primitive_3_fn);
+primitive_def_t *primitive_def_from_4_fn(const char *name, primitive_4_fn_t *primitive_4_fn);
+
 void primitive_def_destroy(primitive_def_t **self_pointer);

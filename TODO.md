@@ -1,13 +1,5 @@
 # vm
 
-primitive_def_from_vm_fn
-
-primitive_def_from_0_fn
-primitive_def_from_1_fn
-primitive_def_from_2_fn
-primitive_def_from_3_fn
-primitive_def_from_4_fn
-
 define_primitive_0_fn
 define_primitive_1_fn
 define_primitive_2_fn
