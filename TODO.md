@@ -1,12 +1,3 @@
-# vm
-
-[vm] define_primitive_vm_fn
-[vm] define_primitive_0_fn
-[vm] define_primitive_1_fn
-[vm] define_primitive_2_fn
-[vm] define_primitive_3_fn
-[vm] define_primitive_4_fn
-
 # lang
 
 [lang] rename execute to execute_operation

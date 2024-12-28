@@ -20,3 +20,8 @@ mod_destroy(mod_t **self_pointer) {
         *self_pointer = NULL;
     }
 }
+
+void
+mod_define(mod_t *self, def_t *def) {
+    assert(hash_set(self->def_hash, string_copy(def_name(def)), def));
+}
