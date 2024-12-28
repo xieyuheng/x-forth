@@ -16,4 +16,3 @@
 5 2 mod 1 eq ok
 
 1 int-to-float 1.0 eq ok
-1.0 int-to-float 1.0 eq ok

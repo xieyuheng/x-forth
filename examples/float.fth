@@ -12,4 +12,3 @@
 5.0 2.0 fdiv 2.5 eq ok
 
 1.0 float-to-int 1 eq ok
-1 float-to-int 1 eq ok

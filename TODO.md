@@ -1,7 +1,5 @@
+[vm] vm_print
 primitives/testing -- ok -- call vm_print
-
-# vm
-
 [vm] op_print -- fix for literal
 
 # value
