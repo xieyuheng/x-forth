@@ -1,8 +1,6 @@
 # vm
 
-[vm] mod_new
-[vm] mod_destroy
-
+[vm] primitive_fn_t
 [vm] primitive_t
 [vm] primitive_def
 [vm] def_t -- union

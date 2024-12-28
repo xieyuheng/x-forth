@@ -8,3 +8,6 @@ struct mod_t {
     const char *code;
     hash_t *def_hash;
 };
+
+mod_t *mod_new(const char *src, const char *string);
+void mod_destroy(mod_t **self_pointer);
