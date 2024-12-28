@@ -12,3 +12,4 @@
 #include "op.h"
 #include "vm.h"
 #include "vm_test.h"
+#include "define_primitive.h"
