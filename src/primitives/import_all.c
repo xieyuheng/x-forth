@@ -45,4 +45,9 @@ import_all(mod_t *mod) {
     define_primitive_2_fn(mod, "fdiv", xfloat_div);
     define_primitive_2_fn(mod, "fmod", xfloat_mod);
     define_primitive_1_fn(mod, "float-to-int", xfloat_to_xint);
+
+    // console
+
+    define_primitive_1_fn(mod, "print", x_print);
+    define_primitive_0_fn(mod, "newline", x_newline);
 }

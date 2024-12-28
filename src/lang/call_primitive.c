@@ -9,20 +9,26 @@ call_primitive(vm_t *vm, const primitive_def_t *def) {
     }
 
     case PRIMITIVE_0_FN: {
-        stack_push(vm->value_stack, def->primitive_0_fn());
+        value_t result = def->primitive_0_fn();
+        if (result != NULL)
+            stack_push(vm->value_stack, result);
         return;
     }
 
     case PRIMITIVE_1_FN: {
         value_t x = stack_pop(vm->value_stack);
-        stack_push(vm->value_stack, def->primitive_1_fn(x));
+        value_t result = def->primitive_1_fn(x);
+        if (result != NULL)
+            stack_push(vm->value_stack, result);
         return;
     }
 
     case PRIMITIVE_2_FN: {
         value_t y = stack_pop(vm->value_stack);
         value_t x = stack_pop(vm->value_stack);
-        stack_push(vm->value_stack, def->primitive_2_fn(x, y));
+        value_t result = def->primitive_2_fn(x, y);
+        if (result != NULL)
+            stack_push(vm->value_stack, result);
         return;
     }
 
@@ -30,7 +36,9 @@ call_primitive(vm_t *vm, const primitive_def_t *def) {
         value_t z = stack_pop(vm->value_stack);
         value_t y = stack_pop(vm->value_stack);
         value_t x = stack_pop(vm->value_stack);
-        stack_push(vm->value_stack, def->primitive_3_fn(x, y, z));
+        value_t result = def->primitive_3_fn(x, y, z);
+        if (result != NULL)
+            stack_push(vm->value_stack, result);
         return;
     }
 
@@ -39,7 +47,9 @@ call_primitive(vm_t *vm, const primitive_def_t *def) {
         value_t z = stack_pop(vm->value_stack);
         value_t y = stack_pop(vm->value_stack);
         value_t x = stack_pop(vm->value_stack);
-        stack_push(vm->value_stack, def->primitive_4_fn(x, y, z, w));
+        value_t result = def->primitive_4_fn(x, y, z, w);
+        if (result != NULL)
+            stack_push(vm->value_stack, result);
         return;
     }
     }
