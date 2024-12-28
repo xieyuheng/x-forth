@@ -1,17 +1,17 @@
 # vm
 
-[vm] dict_t
-[vm] dict_new
-[vm] dict_destroy
+[vm] mod_t -- has def_hash
+[vm] mod_new
+[vm] mod_destroy
 
 [vm] primitive_t
 [vm] primitive_def
 [vm] def_t -- union
 
-[vm] fix dict_new -- for def_t
-[vm] fix dict_destroy -- for def_t
+[vm] fix mod_new -- for def_t
+[vm] fix mod_destroy -- for def_t
 
-[vm] vm has dict
+[vm] vm has mod
 [vm] vm has token_list
 
 [vm] vm_execute_token
