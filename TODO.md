@@ -1,5 +1,3 @@
-[lang] execute_token -- handle literal int and float
-
 primitives/int -- int-to-float
 primitives/float -- float-to-int
 
