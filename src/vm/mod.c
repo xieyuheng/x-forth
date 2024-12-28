@@ -5,7 +5,8 @@ mod_new(const char *src, const char *code) {
     mod_t *self = new(mod_t);
     self->src = src;
     self->code = code;
-    self->def_hash = hash_new();
+    self->def_hash = hash_new_of_string_key();
+    hash_set_destroy_fn(self->def_hash, (destroy_fn_t *) def_destroy);
     return self;
 }
 

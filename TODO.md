@@ -1,8 +1,5 @@
 # vm
 
-[vm] fix mod_new -- for def_t
-[vm] fix mod_destroy -- for def_t
-
 [vm] vm has mod
 [vm] vm has token_list
 
