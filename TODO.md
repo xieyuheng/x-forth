@@ -1,3 +1,5 @@
+touch define_constant.c
+touch define_constant.h
 [vm] constant_def
 [vm] define_constant
 
