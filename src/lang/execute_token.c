@@ -2,7 +2,6 @@
 
 void
 execute_token(vm_t *vm, const token_t *token) {
-    function_t *function = function_new();
     char *name = token->string;
     const def_t *def = mod_find_def(vm->mod, name);
     if (def == NULL) {
@@ -10,6 +9,7 @@ execute_token(vm_t *vm, const token_t *token) {
         exit(1);
     }
 
+    function_t *function = function_new();
     function_add_op(function, (op_t *) call_op_new(def));
     function_build(function);
 

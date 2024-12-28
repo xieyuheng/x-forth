@@ -1,7 +1,7 @@
+[lang] execute_token -- handle literal int and float
+
 primitives/int -- int-to-float
 primitives/float -- float-to-int
-
-[lang] execute_token -- handle literal int and float
 
 primitives/testing -- ok -- call vm_print
 
