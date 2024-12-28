@@ -1,6 +1,6 @@
-# xforth
+# x-forth
 
-xforth is a [forth-like language](https://en.wikipedia.org/wiki/Forth_(programming_language))
+x-forth is a [forth-like language](https://en.wikipedia.org/wiki/Forth_(programming_language))
 with tagged value
 that is extensible by C.
 
@@ -15,13 +15,13 @@ Dependencies:
 Compile:
 
 ```
-git clone https://github.com/cicada-lang/xforth
-cd xforth
+git clone https://github.com/cicada-lang/x-forth
+cd x-forth
 make -j
 make test
 ```
 
-The compiled binary `./bin/xforth` is the command-line program.
+The compiled binary `./bin/x-forth` is the command-line program.
 
 ## Development
 

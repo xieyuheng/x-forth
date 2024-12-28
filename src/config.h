@@ -1,3 +1,3 @@
 #pragma once
 
-#define XFORTH_VERSION "0.1.0"
+#define X_FORTH_VERSION "0.1.0"

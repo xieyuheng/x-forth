@@ -8,7 +8,7 @@ int
 main(int argc, char *argv[]) {
     setup_io();
 
-    commander_t *commander = commander_new("app", XFORTH_VERSION, argc, argv);
+    commander_t *commander = commander_new("x-forth", X_FORTH_VERSION, argc, argv);
 
     commander_use(commander, self_test_command);
     commander_use(commander, default_version_command);
