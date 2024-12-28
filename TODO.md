@@ -1,6 +1,6 @@
-[lang] execute_token -- handle literal int and float
-
 # primitives
+
+setup import_all
 
 primitives/bool -- handle constant
 primitives/null -- handle constant
@@ -11,7 +11,9 @@ primitives/stack
 primitives/int
 primitives/float
 
-import_all
+# lang
+
+[lang] execute_token -- handle literal int and float
 
 # vm
 
