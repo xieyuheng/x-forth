@@ -1,6 +1,5 @@
 # vm
 
-[vm] mod_t -- has def_hash
 [vm] mod_new
 [vm] mod_destroy
 

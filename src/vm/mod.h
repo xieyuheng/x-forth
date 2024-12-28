@@ -1,3 +1,10 @@
 #pragma once
 
-// modionary of definitions
+// A mod is a compilation unit,
+// like the dictionary of forth.
+
+struct mod_t {
+    const char *src;
+    const char *string;
+    hash_t *def_hash;
+};
