@@ -1,7 +1,5 @@
 # lang
 
-[lang] setup lang/
-
 [lang] move execute to lang
 
 ambr vm_step step_vm
