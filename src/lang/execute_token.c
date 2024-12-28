@@ -29,7 +29,7 @@ static bool execute_generic_token(vm_t *vm, const token_t *token) {
     char *name = token->string;
     const def_t *def = mod_find_def(vm->mod, name);
     if (def == NULL) {
-        fprintf(vm->err, "[execute_token] undefined name: %s\n", name);
+        fprintf(stderr, "[execute_token] undefined name: %s\n", name);
         exit(1);
     }
 
@@ -51,5 +51,5 @@ execute_token(vm_t *vm, const token_t *token) {
     if (execute_float_token(vm, token)) return;
     if (execute_generic_token(vm, token)) return;
 
-    fprintf(vm->err, "[execute_token] unknown token: %s\n", token->string);
+    fprintf(stderr, "[execute_token] unknown token: %s\n", token->string);
 }

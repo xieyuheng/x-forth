@@ -1,5 +1,3 @@
-vm should not have err and out
-
 primitives/testing -- ok -- call vm_print
 
 # vm
