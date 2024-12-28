@@ -21,7 +21,7 @@ run_file(const char *path) {
     // import_primitives(mod);
     vm_t *vm = vm_new(mod);
 
-    execute(vm);
+    execute_vm(vm);
 
     mod_destroy(&mod);
     vm_destroy(&vm);
