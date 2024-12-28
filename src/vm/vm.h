@@ -4,6 +4,8 @@ struct vm_t {
     mod_t *mod;
     stack_t *value_stack;
     stack_t *return_stack;
+    file_t *out;
+    file_t *err;
 };
 
 vm_t *vm_new(mod_t *mod);

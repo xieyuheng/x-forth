@@ -6,6 +6,8 @@ vm_new(mod_t *mod) {
     self->mod = mod;
     self->value_stack = stack_new();
     self->return_stack = stack_new_with((destroy_fn_t *) frame_destroy);
+    self->out = stdout;
+    self->err = stderr;
     return self;
 }
 
