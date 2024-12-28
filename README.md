@@ -2,7 +2,7 @@
 
 x-forth is a [forth-like language](https://en.wikipedia.org/wiki/Forth_(programming_language))
 with tagged value
-that is extensible by C.
+that is extensible by c.
 
 ## Install
 
