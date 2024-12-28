@@ -1,9 +1,16 @@
 # vm
 
-[vm] remove ram
-
 [vm] vm has dict
 [vm] vm has token_list
+
+[vm] primitive_t
+
+[vm] function_t
+
+[vm] frame has function
+
+[vm] fix frame_fetch_value
+
 
 [vm] fix vm_step
 

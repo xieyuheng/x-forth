@@ -18,15 +18,14 @@ frame_destroy(frame_t **self_pointer) {
 }
 
 value_t
-frame_fetch_value(frame_t *self, ram_t *ram) {
-    value_t value = ram_get_value(ram, self->address);
-    self->address += sizeof(value_t);
-    return value;
+frame_fetch_value(frame_t *self) {
+    (void) self; 
+    
+    return NULL;
 }
 
 uint8_t
-frame_fetch_byte(frame_t *self, ram_t *ram) {
-    uint8_t byte = ram_get_byte(ram, self->address);
-    self->address += sizeof(uint8_t);
-    return byte;
+frame_fetch_byte(frame_t *self) {
+    (void) self;
+    return 0;
 }
