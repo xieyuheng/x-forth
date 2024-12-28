@@ -1,6 +1,5 @@
 # lang
 
-[lang] rename execute to execute_operation
 [lang] fix execute_operation
 [lang] execute_token
 
