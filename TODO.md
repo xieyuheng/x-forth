@@ -1,8 +1,5 @@
 # vm
 
-[vm] op_t -- abbreviation of "operation" (not "opcode")
-
-[vm] call_op_t
 [vm] literal_op_t
 
 [vm] function_t -- has an array of operation
