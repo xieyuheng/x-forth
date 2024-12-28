@@ -1,9 +1,16 @@
 #include "index.h"
 
+struct frame_t {
+    size_t function_counter;
+    const function_t *function;
+};
+
+
 frame_t *
-frame_new(size_t address) {
+frame_new(const function_t *function) {
     frame_t *self = new(frame_t);
-    self->address = address;
+    self->function_counter = 0;
+    self->function = function;
     return self;
 }
 
@@ -17,15 +24,27 @@ frame_destroy(frame_t **self_pointer) {
     }
 }
 
-value_t
-frame_fetch_value(frame_t *self) {
-    (void) self; 
-    
-    return NULL;
+bool
+frame_is_finished(const frame_t *self) {
+    return self->function_counter == function_length(self->function);
 }
 
-uint8_t
-frame_fetch_byte(frame_t *self) {
-    (void) self;
-    return 0;
+op_t *
+frame_fetch_op(frame_t *self) {
+    op_t *op = function_get_op(self->function, self->function_counter);
+    self->function_counter++;
+    return op;
+}
+
+void
+frame_print(const frame_t *self, file_t *file) {
+    fprintf(file, "<frame>\n");
+
+    fprintf(file, "<function>\n");
+    fprintf(file, ". ");
+    function_print_with_function_counter(self->function, file, self->function_counter);
+    fprintf(file, "\n");
+    fprintf(file, "</function>\n");
+
+    fprintf(file, "</frame>\n");
 }

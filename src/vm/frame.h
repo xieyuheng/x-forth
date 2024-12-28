@@ -1,11 +1,8 @@
 #pragma once
 
-struct frame_t {
-    size_t address;
-};
-
-frame_t *frame_new(size_t address);
+frame_t *frame_new(const function_t *function);
 void frame_destroy(frame_t **self_pointer);
 
-value_t frame_fetch_value(frame_t *self);
-uint8_t frame_fetch_byte(frame_t *self);
+bool frame_is_finished(const frame_t *self);
+op_t *frame_fetch_op(frame_t *self);
+void frame_print(const frame_t *self, file_t *file);

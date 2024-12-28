@@ -1,7 +1,5 @@
 # vm
 
-[vm] frame has function
-[vm] fix frame_fetch_value
 [vm] fix vm_step
 [vm] function_def
 
