@@ -5,6 +5,7 @@
 #include "mod.h"
 #include "frame.h"
 #include "execute.h"
+#include "function.h"
 #include "primitive_def.h"
 #include "def.h"
 #include "op.h"

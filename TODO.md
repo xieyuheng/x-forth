@@ -1,6 +1,5 @@
 # vm
 
-[vm] function_t -- has an array of operation
 [vm] frame has function
 [vm] fix frame_fetch_value
 [vm] fix vm_step
