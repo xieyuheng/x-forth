@@ -1,8 +1,5 @@
 # vm
 
-[vm] primitive_fn_t
-[vm] primitive_t
-[vm] primitive_def
 [vm] def_t -- union
 
 [vm] fix mod_new -- for def_t
