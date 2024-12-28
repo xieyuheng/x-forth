@@ -1,10 +1,11 @@
 # primitives
 
-primitives/bool -- true false
+primitives/testing -- ok
+
 primitives/bool -- and or not
 
 primitives/value -- eq
-primitives/testing -- ok
+
 primitives/stack -- dup swap drop rot over tuck
 
 primitives/int -- add sub mul div mod
