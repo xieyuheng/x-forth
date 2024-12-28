@@ -1,13 +1,12 @@
 # vm
 
-primitive_def_t as a tagged union
+primitive_def_from_vm_fn
 
-primitive_vm_fn_t
-primitive_0_fn_t
-primitive_1_fn_t
-primitive_2_fn_t
-primitive_3_fn_t
-primitive_4_fn_t
+primitive_def_from_0_fn
+primitive_def_from_1_fn
+primitive_def_from_2_fn
+primitive_def_from_3_fn
+primitive_def_from_4_fn
 
 define_primitive_0_fn
 define_primitive_1_fn
