@@ -38,3 +38,39 @@ vm_destroy(vm_t **self_pointer) {
         *self_pointer = NULL;
     }
 }
+
+void
+vm_print_return_stack(const vm_t *self, file_t *file) {
+    size_t return_stack_length = stack_length(self->return_stack);
+    fprintf(file, "<return-stack length=\"%lu\">\n", return_stack_length);
+    for (size_t i = 0; i < return_stack_length; i++) {
+        frame_t *frame = stack_get(self->return_stack, i);
+        frame_print(frame, file);
+    }
+
+    fprintf(file, "</return-stack>\n");
+}
+
+void
+vm_print_value_stack(const vm_t *self, file_t *file) {
+    size_t value_stack_length = stack_length(self->value_stack);
+    fprintf(file, "<value-stack length=\"%lu\">\n", value_stack_length);
+    for (size_t i = 0; i < value_stack_length; i++) {
+        value_t value = stack_get(self->value_stack, i);
+        (void) value;
+        // value_print(value, file);
+        fprintf(file, "\n");
+    }
+
+    fprintf(file, "</value-stack>\n");
+}
+
+void
+vm_print(const vm_t *self, file_t *file) {
+    fprintf(file, "<vm>\n");
+
+    vm_print_return_stack(self, file);
+    vm_print_value_stack(self, file);
+
+    fprintf(file, "</vm>\n");
+}
