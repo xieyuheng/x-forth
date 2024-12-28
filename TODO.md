@@ -1,6 +1,6 @@
 # lang
 
-[lang] execute_operation -- handle CALL_OP
+[lang] call_primitive -- handle fn_kind
 [lang] execute_token
 
 [lang] test the outer interpreter

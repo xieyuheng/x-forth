@@ -2,6 +2,8 @@
 
 void
 execute_operation(vm_t *vm, frame_t *frame, op_t *unknown_op) {
+    (void) frame;
+
     switch (unknown_op->kind) {
     case LITERAL_OP: {
         literal_op_t *op = (literal_op_t *) unknown_op;
@@ -10,17 +12,8 @@ execute_operation(vm_t *vm, frame_t *frame, op_t *unknown_op) {
     }
 
     case CALL_OP: {
-        (void) frame;
-        // size_t address = to_address(frame_fetch_value(frame, vm->ram));
-
-        // // handle tail-call here.
-        // if (frame_is_at_tail(frame, vm->ram)) {
-        //     frame_destroy(&frame);
-        // } else {
-        //     stack_push(vm->return_stack, frame);
-        // }
-
-        // stack_push(vm->return_stack, frame_new(address));
+        call_op_t *op = (call_op_t *) unknown_op;
+        call(vm, op->def);
         return;
     }
     }
