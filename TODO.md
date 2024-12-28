@@ -1,9 +1,6 @@
 # primitives
 
-primitives/bool -- and or not
-
 primitives/value -- eq
-
 primitives/stack -- dup swap drop rot over tuck
 
 primitives/int -- add sub mul div mod
