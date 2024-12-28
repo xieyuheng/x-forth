@@ -32,7 +32,7 @@ vm_destroy(vm_t **self_pointer) {
     assert(self_pointer);
     if (*self_pointer) {
         vm_t *self = *self_pointer;
-        mod_destroy(&self->mod);
+        // vm does not own mod
         list_destroy(&self->token_list);
         stack_destroy(&self->value_stack);
         stack_destroy(&self->return_stack);

@@ -1,5 +1,3 @@
-fix double free bug
-
 # primitives
 
 primitives/bool -- true false
