@@ -18,5 +18,5 @@ execute_operation(vm_t *vm, frame_t *frame, op_t *unknown_op) {
     }
     }
 
-    assert(false && "[execute] unknown opcode");
+    assert(false && "[execute_operation] unknown operation");
 }

@@ -1,8 +1,7 @@
 # lang
 
-[lang] call_primitive -- handle fn_kind
+[vm] fix define_primitive
 [lang] execute_token
-
 [lang] test the outer interpreter
 
 # primitives
