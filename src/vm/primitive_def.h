@@ -29,5 +29,5 @@ struct primitive_def_t {
     };
 };
 
-primitive_def_t *primitive_def_new(const char *name, primitive_vm_fn_t *primitive_vm_fn);
+primitive_def_t *primitive_def_from_vm_fn(const char *name, primitive_vm_fn_t *primitive_vm_fn);
 void primitive_def_destroy(primitive_def_t **self_pointer);
