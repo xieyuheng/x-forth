@@ -1,4 +1,3 @@
-x_define_constant -- consume token_list from vm
 define -- consume token_list from vm
 
 # value

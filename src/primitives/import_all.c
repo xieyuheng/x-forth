@@ -50,4 +50,8 @@ import_all(mod_t *mod) {
 
     define_primitive_1_fn(mod, "print", x_print);
     define_primitive_0_fn(mod, "newline", x_newline);
+
+    // constant
+
+    define_primitive_vm_fn(mod, "define-constant", x_define_constant);
 }
