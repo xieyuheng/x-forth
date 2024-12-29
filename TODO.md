@@ -1,6 +1,3 @@
-[lang] compile_int_token
-[lang] compile_float_token
-
 # local variable
 
 [lang] compile_function -- setup function_ctx_t

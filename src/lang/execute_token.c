@@ -2,25 +2,21 @@
 
 static bool
 execute_int_token(vm_t *vm, const token_t *token) {
-    if (token->kind != INT_TOKEN)
-        return false;
+    if (token->kind != INT_TOKEN) return false;
+    if (!string_is_xint(token->string)) return false;
 
-    if (!string_is_xint(token->string))
-        return false;
-
-    stack_push(vm->value_stack, xint(string_parse_xint(token->string)));
+    value_t value = xint(string_parse_xint(token->string));
+    stack_push(vm->value_stack, value);
     return true;
 }
 
 static bool
 execute_float_token(vm_t *vm, const token_t *token) {
-    if (token->kind != FLOAT_TOKEN)
-        return false;
+    if (token->kind != FLOAT_TOKEN) return false;
+    if (!string_is_double(token->string)) return false;
 
-    if (!string_is_double(token->string))
-        return false;
-
-    stack_push(vm->value_stack, xfloat(string_parse_double(token->string)));
+    value_t value = xfloat(string_parse_double(token->string));
+    stack_push(vm->value_stack, value);
     return true;
 }
 
