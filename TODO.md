@@ -1,5 +1,3 @@
-[vm] define_function
-
 [primitives] x_define_function -- consume token_list from vm
 
 # object
