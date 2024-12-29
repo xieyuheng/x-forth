@@ -9,3 +9,11 @@ value_t x_newline(void) {
     printf("\n");
     return NULL;
 }
+
+void x_print_value_stack(vm_t *vm) {
+    vm_print_value_stack(vm, stdout);
+}
+
+void x_print_return_stack(vm_t *vm) {
+    vm_print_return_stack(vm, stdout);
+}

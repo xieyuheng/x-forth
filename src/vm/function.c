@@ -67,12 +67,12 @@ void
 function_print_with_function_counter(const function_t *self, file_t *file, size_t function_counter) {
     for (size_t i = 0; i < self->length; i++) {
         if (i == function_counter) {
-            fprintf(file, "<<< ");
             op_print(self->ops[i], file);
-            fprintf(file, " ");
+            fprintf(file, " <<<");
+            fprintf(file, "\n");
         } else {
             op_print(self->ops[i], file);
-            fprintf(file, " ");
+            fprintf(file, "\n");
         }
     }
 }

@@ -1,7 +1,7 @@
 # local variable
 
+[lang] function_ctx_t
 [lang] compile_function -- setup function_ctx_t
-function_ctx_t
 [lang] compile_token -- take function_ctx_t
 use `( ... )` for local variable
 

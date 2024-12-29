@@ -12,3 +12,13 @@ false print drop newline
 
 1. print drop newline
 2. print drop newline
+
+1 2 3 print-value-stack
+
+define hi
+  1 2 3
+  print-return-stack
+  4 5 6
+end
+
+hi

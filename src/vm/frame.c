@@ -41,9 +41,7 @@ frame_print(const frame_t *self, file_t *file) {
     fprintf(file, "<frame>\n");
 
     fprintf(file, "<function>\n");
-    fprintf(file, ". ");
     function_print_with_function_counter(self->function, file, self->function_counter);
-    fprintf(file, "\n");
     fprintf(file, "</function>\n");
 
     fprintf(file, "</frame>\n");
