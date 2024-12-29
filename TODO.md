@@ -1,24 +1,22 @@
 # local variable
 
+[lang] setup function_ctx
 [lang] function_ctx_t
+[lang] function_ctx_new
+[lang] function_ctx_destroy
+
 [lang] compile_function -- setup function_ctx_t
 [lang] compile_token -- take function_ctx_t
-use `( ... )` for local variable
+
+[vm] frame has local_variable_array
+[lang] function_ctx_t -- has a hash for local variable index
+[lang] compile_local_variable -- use `( ... )` for local variable
 
 # object
 
 [value] object_spec_t -- xobject use global address of object_spec_t as kind
 [value] object_spec_t -- has name
 [value] object_spec_t -- has optional description
-
-# global variable
-
-[value] xvar_t -- should be an xobject
-
-[value] x_define_variable
-
-xvar_get(variable)
-xvar_set(variable, value)
 
 # string
 
@@ -32,11 +30,29 @@ function_t as xobject
 
 use `{ ... }` for function
 
-# struct
+# record
+
+learn from jai about how to handle type with parameters
+
+a record is implemented as a hash table
+
+- with `!` as onwership mark
+- [problem] should we use `.` or `:`?
 
 ```
-define-struct node-t
-  name { is-string }
-  next { type node-t eq }
+define-record node-t
+  .name! string-t
+  .next node-t
 end
+
+node .name
 ```
+
+# global variable
+
+[value] xvar_t -- should be an xobject
+
+[value] x_define_variable
+
+xvar_get(variable)
+xvar_set(variable, value)
