@@ -1,15 +1,10 @@
-[lang] execute_token -- should call token_destroy
-[lang] compile_token -- should call token_destroy
-
-[lang] compile_function -- consume token_list from vm
-[lang] compile_function -- setup function_ctx_t
-[lang] compile_token -- take function_ctx_t
-
 [lang] compile_int_token
 [lang] compile_float_token
 
 # local variable
 
+[lang] compile_function -- setup function_ctx_t
+[lang] compile_token -- take function_ctx_t
 use `( ... )` for local variable
 
 # object
