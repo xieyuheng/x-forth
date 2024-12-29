@@ -1,4 +1,5 @@
-x_define -- consume token_list from vm
+[vm] define_function
+[primitives] x_define_function -- consume token_list from vm
 
 # value
 
