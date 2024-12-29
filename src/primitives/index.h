@@ -5,4 +5,5 @@
 #include "value.h"
 #include "testing.h"
 #include "console.h"
+#include "constant.h"
 #include "import_all.h"
