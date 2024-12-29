@@ -6,4 +6,5 @@
 #include "testing.h"
 #include "console.h"
 #include "constant.h"
+#include "function.h"
 #include "import_all.h"

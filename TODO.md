@@ -1,4 +1,4 @@
-define -- consume token_list from vm
+x_define -- consume token_list from vm
 
 # value
 
