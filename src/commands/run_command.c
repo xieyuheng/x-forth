@@ -1,5 +1,6 @@
 #include "index.h"
 #include "../lang/index.h"
+#include "../primitives/index.h"
 
 static int run(commander_t *commander);
 

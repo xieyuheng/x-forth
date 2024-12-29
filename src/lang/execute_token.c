@@ -1,6 +1,7 @@
 #include "index.h"
 
-static bool execute_int_token(vm_t *vm, const token_t *token) {
+static bool
+execute_int_token(vm_t *vm, const token_t *token) {
     if (token->kind != INT_TOKEN)
         return false;
 
@@ -11,7 +12,8 @@ static bool execute_int_token(vm_t *vm, const token_t *token) {
     return true;
 }
 
-static bool execute_float_token(vm_t *vm, const token_t *token) {
+static bool
+execute_float_token(vm_t *vm, const token_t *token) {
     if (token->kind != FLOAT_TOKEN)
         return false;
 
@@ -22,12 +24,13 @@ static bool execute_float_token(vm_t *vm, const token_t *token) {
     return true;
 }
 
-static bool execute_generic_token(vm_t *vm, const token_t *token) {
+static bool
+execute_generic_token(vm_t *vm, const token_t *token) {
     if (token->kind != GENERIC_TOKEN)
         return false;
 
     function_t *function = function_new();
-    function_emit_call(function, vm->mod, token->string);
+    compile_token(vm, token, function);
     function_build(function);
 
     size_t base_length = stack_length(vm->return_stack);

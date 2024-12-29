@@ -1,12 +1,16 @@
-[lang] compile_function -- consume token_list from vm
-[lang] compile_function -- take function_ctx_t
-[lang] compile_token -- like execute_token
+[lang] execute_token -- should call token_destroy
+[lang] compile_token -- should call token_destroy
 
-[lang] compile_generic_token
+[lang] compile_function -- consume token_list from vm
+[lang] compile_function -- setup function_ctx_t
+[lang] compile_token -- take function_ctx_t
+
 [lang] compile_int_token
 [lang] compile_float_token
 
-[primitives] x_define_function -- handle literal
+# local variable
+
+use `( ... )` for local variable
 
 # object
 
@@ -23,15 +27,15 @@
 xvar_get(variable)
 xvar_set(variable, value)
 
-# local variable
-
-use `( ... )` for local variable
-
 # string
+
+xstring -- as xobject
 
 "..." for string
 
 # function
+
+function_t as xobject
 
 use `{ ... }` for function
 
