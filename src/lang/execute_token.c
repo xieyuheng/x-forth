@@ -26,15 +26,8 @@ static bool execute_generic_token(vm_t *vm, const token_t *token) {
     if (token->kind != GENERIC_TOKEN)
         return false;
 
-    char *name = token->string;
-    const def_t *def = mod_find_def(vm->mod, name);
-    if (def == NULL) {
-        fprintf(stderr, "[execute_token] undefined name: %s\n", name);
-        exit(1);
-    }
-
     function_t *function = function_new();
-    function_add_op(function, (op_t *) call_op_new(def));
+    function_emit_call(function, vm->mod, token->string);
     function_build(function);
 
     size_t base_length = stack_length(vm->return_stack);

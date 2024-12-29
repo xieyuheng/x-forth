@@ -10,3 +10,5 @@ op_t *function_get_op(const function_t *self, size_t index);
 
 void function_print(const function_t *self, file_t *file);
 void function_print_with_function_counter(const function_t *self, file_t *file, size_t function_counter);
+
+void function_emit_call(function_t *self, mod_t *mod, const char *name);
