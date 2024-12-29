@@ -2,7 +2,7 @@
 
 value_t x_print(value_t x) {
     value_print(x, stdout);
-    return NULL;
+    return x;
 }
 
 value_t x_newline(void) {

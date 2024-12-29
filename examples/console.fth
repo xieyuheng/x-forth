@@ -1,14 +1,14 @@
-null print newline
-true print newline
-false print newline
+null print drop newline
+true print drop newline
+false print drop newline
 
-1 2 add print newline
--1 -2 add print newline
+1 2 add print drop newline
+-1 -2 add print drop newline
 
-0.0 0.0 fadd print newline
-0.1 0.2 fadd print newline
-1.0 2.0 fadd print newline
-1.1 2.2 fadd print newline
+0.0 0.0 fadd print drop newline
+0.1 0.2 fadd print drop newline
+1.0 2.0 fadd print drop newline
+1.1 2.2 fadd print drop newline
 
-1. print newline
-2. print newline
+1. print drop newline
+2. print drop newline
