@@ -1,4 +1,12 @@
-[primitives] x_define_function -- consume token_list from vm
+[lang] compile_function -- consume token_list from vm
+[lang] compile_function -- take function_ctx_t
+[lang] compile_token -- like execute_token
+
+[lang] compile_generic_token
+[lang] compile_int_token
+[lang] compile_float_token
+
+[primitives] x_define_function -- handle literal
 
 # object
 

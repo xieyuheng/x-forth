@@ -15,6 +15,7 @@ void x_define_function(vm_t *vm) {
             return;
         }
 
-        //
+        function_emit_call(function, vm->mod, token->string);
+        token_destroy(&token);
     }
 }
