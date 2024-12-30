@@ -16,6 +16,6 @@ call(vm_t *vm, const def_t *def) {
     case CONSTANT_DEF: {
         call_constant(vm, def->as_constant_def);
         return;
-    }    
+    }
     }
 }

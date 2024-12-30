@@ -21,7 +21,6 @@ run_file(const char *path) {
     mod_t *mod = mod_new(path, code);
     import_all(mod);
     vm_t *vm = vm_new(mod);
-
     execute_all(vm);
 
     mod_destroy(&mod);
