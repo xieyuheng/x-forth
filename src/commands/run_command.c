@@ -22,7 +22,7 @@ run_file(const char *path) {
     import_all(mod);
     vm_t *vm = vm_new(mod);
 
-    execute_vm(vm);
+    execute_all(vm);
 
     mod_destroy(&mod);
     vm_destroy(&vm);
