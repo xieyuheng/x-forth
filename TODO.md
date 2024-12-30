@@ -1,6 +1,5 @@
 # local variable
 
-[vm] frame_get_local & frame_set_local
 [lang] compile_local_variable -- use `( ... )` for local variable
 
 # object

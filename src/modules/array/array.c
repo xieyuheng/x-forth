@@ -96,6 +96,12 @@ array_get(array_t *self, size_t index) {
     return self->values[index];
 }
 
+void
+array_set(array_t *self, size_t index, void *value) {
+    assert(index < self->cursor);
+    self->values[index] = value;
+}
+
 void *
 array_pick(array_t *self, size_t index) {
     assert(index < self->cursor);

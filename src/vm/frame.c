@@ -50,3 +50,13 @@ frame_print(const frame_t *self, file_t *file) {
 
     fprintf(file, "</frame>\n");
 }
+
+value_t
+frame_get_local(const frame_t *self, size_t index) {
+    return array_get(self->local_array, index);
+}
+
+void
+frame_set_local(frame_t *self, size_t index, value_t value) {
+    array_set(self->local_array, index, value);
+}
