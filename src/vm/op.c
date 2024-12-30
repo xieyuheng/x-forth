@@ -36,6 +36,43 @@ literal_op_destroy(literal_op_t **self_pointer) {
     }
 }
 
+
+local_get_op_t *
+local_get_op_new(size_t index) {
+    local_get_op_t *self = new(local_get_op_t);
+    self->kind = LOCAL_GET_OP;
+    self->index = index;
+    return self;
+}
+
+void
+local_get_op_destroy(local_get_op_t **self_pointer) {
+    assert(self_pointer);
+    if (*self_pointer) {
+        local_get_op_t *self = *self_pointer;
+        free(self);
+        *self_pointer = NULL;
+    }
+}
+
+local_set_op_t *
+local_set_op_new(size_t index) {
+    local_set_op_t *self = new(local_set_op_t);
+    self->kind = LOCAL_SET_OP;
+    self->index = index;
+    return self;
+}
+
+void
+local_set_op_destroy(local_set_op_t **self_pointer) {
+    assert(self_pointer);
+    if (*self_pointer) {
+        local_set_op_t *self = *self_pointer;
+        free(self);
+        *self_pointer = NULL;
+    }
+}
+
 void
 op_destroy(op_t **self_pointer) {
     assert(self_pointer);
@@ -49,6 +86,16 @@ op_destroy(op_t **self_pointer) {
 
         case LITERAL_OP: {
             literal_op_destroy((literal_op_t **) self_pointer);
+            return;
+        }
+
+        case LOCAL_GET_OP: {
+            local_get_op_destroy((local_get_op_t **) self_pointer);
+            return;
+        }
+
+        case LOCAL_SET_OP: {
+            local_set_op_destroy((local_set_op_t **) self_pointer);
             return;
         }
         }
@@ -67,7 +114,19 @@ op_print(const op_t *unknown_op, file_t *file) {
     case LITERAL_OP: {
         literal_op_t *op = (literal_op_t *) unknown_op;
         fprintf(file, "LITERAL ");
-        value_print(op->value, file);        
+        value_print(op->value, file);
+        return;
+    }
+
+    case LOCAL_GET_OP: {
+        local_get_op_t *op = (local_get_op_t *) unknown_op;
+        fprintf(file, "LOCAL-GET %ld", op->index);
+        return;
+    }
+
+    case LOCAL_SET_OP: {
+        local_set_op_t *op = (local_set_op_t *) unknown_op;
+        fprintf(file, "LOCAL-SET %ld", op->index);
         return;
     }
     }
