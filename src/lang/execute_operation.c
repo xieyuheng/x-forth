@@ -7,7 +7,6 @@ execute_operation(vm_t *vm, frame_t *frame, op_t *unknown_op) {
         call_op_t *op = (call_op_t *) unknown_op;
         call(vm, op->def);
         return;
-
     }
 
     case LITERAL_OP: {

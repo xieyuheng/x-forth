@@ -36,7 +36,6 @@ literal_op_destroy(literal_op_t **self_pointer) {
     }
 }
 
-
 local_get_op_t *
 local_get_op_new(size_t index) {
     local_get_op_t *self = new(local_get_op_t);
