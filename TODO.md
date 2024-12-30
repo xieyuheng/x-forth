@@ -1,6 +1,5 @@
 # local variable
 
-[lang] function_ctx_t
 [lang] function_ctx_new
 [lang] function_ctx_destroy
 
@@ -8,7 +7,7 @@
 [lang] compile_token -- take function_ctx_t
 
 [vm] frame has local_variable_array
-[lang] function_ctx_t -- has a hash for local variable index
+
 [lang] compile_local_variable -- use `( ... )` for local variable
 
 # object
