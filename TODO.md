@@ -1,7 +1,3 @@
-# local variable
-
-[lang] compile_generic -- lookup local index hash first to emit locaop compile
-
 # object
 
 [value] object_spec_t -- xobject use global address of object_spec_t as kind
