@@ -1,8 +1,9 @@
 #include "index.h"
 
 static bool
-compile_int_token(vm_t *vm, const token_t *token, function_t *function) {
+compile_int_token(vm_t *vm, const token_t *token, function_t *function, function_ctx_t *ctx) {
     (void) vm;
+    (void) ctx;
 
     if (token->kind != INT_TOKEN) return false;
     if (!string_is_xint(token->string)) return false;
@@ -13,8 +14,9 @@ compile_int_token(vm_t *vm, const token_t *token, function_t *function) {
 }
 
 static bool
-compile_float_token(vm_t *vm, const token_t *token, function_t *function) {
+compile_float_token(vm_t *vm, const token_t *token, function_t *function, function_ctx_t *ctx) {
     (void) vm;
+    (void) ctx;
 
     if (token->kind != FLOAT_TOKEN) return false;
     if (!string_is_double(token->string)) return false;
@@ -25,16 +27,18 @@ compile_float_token(vm_t *vm, const token_t *token, function_t *function) {
 }
 
 static bool
-compile_generic_token(vm_t *vm, const token_t *token, function_t *function) {
+compile_generic_token(vm_t *vm, const token_t *token, function_t *function, function_ctx_t *ctx) {
+    (void) ctx;
+
     function_emit_call(function, vm->mod, token->string);
     return true;
 }
 
 void
-compile_token(vm_t *vm, const token_t *token, function_t *function) {
-    if (compile_int_token(vm, token, function)) return;
-    if (compile_float_token(vm, token, function)) return;
-    if (compile_generic_token(vm, token, function)) return;
+compile_token(vm_t *vm, const token_t *token, function_t *function, function_ctx_t *ctx) {
+    if (compile_int_token(vm, token, function, ctx)) return;
+    if (compile_float_token(vm, token, function, ctx)) return;
+    if (compile_generic_token(vm, token, function, ctx)) return;
 
     fprintf(stderr, "[compile_token] unknown token: %s\n", token->string);
 }

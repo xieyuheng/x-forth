@@ -26,13 +26,15 @@ execute_generic_token(vm_t *vm, const token_t *token) {
         return false;
 
     function_t *function = function_new();
-    compile_token(vm, token, function);
+    function_ctx_t *ctx = function_ctx_new();
+    compile_token(vm, token, function, ctx);
     function_build(function);
 
     size_t base_length = stack_length(vm->return_stack);
     stack_push(vm->return_stack, frame_new(function));
     run_vm_until(vm, base_length);
-
+    
+    function_ctx_destroy(&ctx);
     function_destroy(&function);
     return true;
 }

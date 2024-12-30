@@ -1,10 +1,6 @@
 # local variable
 
-[lang] compile_function -- setup function_ctx_t
-[lang] compile_token -- take function_ctx_t
-
 [vm] frame has local_variable_array
-
 [lang] compile_local_variable -- use `( ... )` for local variable
 
 # object
