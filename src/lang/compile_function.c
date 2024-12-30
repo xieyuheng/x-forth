@@ -13,7 +13,7 @@ compile_function(vm_t *vm) {
             return function;
         }
 
-        compile_token(vm, token, function, ctx);
+        compile_step(vm, token, function, ctx);
     }
 
     function_ctx_destroy(&ctx);

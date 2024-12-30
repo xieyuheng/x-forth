@@ -44,10 +44,10 @@ compile_generic_token(vm_t *vm, token_t *token, function_t *function, function_c
 }
 
 void
-compile_token(vm_t *vm, token_t *token, function_t *function, function_ctx_t *ctx) {
+compile_step(vm_t *vm, token_t *token, function_t *function, function_ctx_t *ctx) {
     if (compile_int_token(vm, token, function, ctx)) return;
     if (compile_float_token(vm, token, function, ctx)) return;
     if (compile_generic_token(vm, token, function, ctx)) return;
 
-    fprintf(stderr, "[compile_token] unknown token: %s\n", token->string);
+    fprintf(stderr, "[compile_step] unknown token: %s\n", token->string);
 }

@@ -1,6 +1,5 @@
 # local variable
 
-[lang] rename compile_token to compile_step
 [lang] compile_step -- should take token form vm
 
 [lang] compile_local_variable -- use `( ... )` for local variable

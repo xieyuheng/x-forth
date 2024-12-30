@@ -34,7 +34,7 @@ execute_generic_token(vm_t *vm) {
 
     function_t *function = function_new();
     function_ctx_t *ctx = function_ctx_new();
-    compile_token(vm, token, function, ctx);
+    compile_step(vm, token, function, ctx);
     function_build(function);
 
     size_t base_length = stack_length(vm->return_stack);
