@@ -7,6 +7,7 @@ execute_int_token(vm_t *vm, token_t *token) {
 
     value_t value = xint(string_parse_xint(token->string));
     stack_push(vm->value_stack, value);
+    token_destroy(&token);
     return true;
 }
 
@@ -17,13 +18,13 @@ execute_float_token(vm_t *vm, token_t *token) {
 
     value_t value = xfloat(string_parse_double(token->string));
     stack_push(vm->value_stack, value);
+    token_destroy(&token);
     return true;
 }
 
 static bool
 execute_generic_token(vm_t *vm, token_t *token) {
-    if (token->kind != GENERIC_TOKEN)
-        return false;
+    if (token->kind != GENERIC_TOKEN) return false;
 
     function_t *function = function_new();
     function_ctx_t *ctx = function_ctx_new();
@@ -36,6 +37,7 @@ execute_generic_token(vm_t *vm, token_t *token) {
 
     function_ctx_destroy(&ctx);
     function_destroy(&function);
+    token_destroy(&token);
     return true;
 }
 
@@ -45,7 +47,6 @@ execute_token(vm_t *vm, token_t *token) {
         execute_float_token(vm, token) ||
         execute_generic_token(vm, token))
     {
-        token_destroy(&token);
         return;
     }
 

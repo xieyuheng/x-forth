@@ -1,7 +1,7 @@
 #include "index.h"
 
 static bool
-compile_int_token(vm_t *vm, const token_t *token, function_t *function, function_ctx_t *ctx) {
+compile_int_token(vm_t *vm, token_t *token, function_t *function, function_ctx_t *ctx) {
     (void) vm;
     (void) ctx;
 
@@ -14,7 +14,7 @@ compile_int_token(vm_t *vm, const token_t *token, function_t *function, function
 }
 
 static bool
-compile_float_token(vm_t *vm, const token_t *token, function_t *function, function_ctx_t *ctx) {
+compile_float_token(vm_t *vm, token_t *token, function_t *function, function_ctx_t *ctx) {
     (void) vm;
     (void) ctx;
 
@@ -27,7 +27,7 @@ compile_float_token(vm_t *vm, const token_t *token, function_t *function, functi
 }
 
 static bool
-compile_generic_token(vm_t *vm, const token_t *token, function_t *function, function_ctx_t *ctx) {
+compile_generic_token(vm_t *vm, token_t *token, function_t *function, function_ctx_t *ctx) {
     (void) ctx;
 
     const def_t *def = mod_find_def(vm->mod, token->string);
@@ -41,7 +41,7 @@ compile_generic_token(vm_t *vm, const token_t *token, function_t *function, func
 }
 
 void
-compile_token(vm_t *vm, const token_t *token, function_t *function, function_ctx_t *ctx) {
+compile_token(vm_t *vm, token_t *token, function_t *function, function_ctx_t *ctx) {
     if (compile_int_token(vm, token, function, ctx)) return;
     if (compile_float_token(vm, token, function, ctx)) return;
     if (compile_generic_token(vm, token, function, ctx)) return;
