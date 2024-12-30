@@ -1,6 +1,5 @@
 # local variable
 
-[lang] function_ctx_new
 [lang] function_ctx_destroy
 
 [lang] compile_function -- setup function_ctx_t
