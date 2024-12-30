@@ -1,6 +1,5 @@
 # local variable
 
-[lang] setup function_ctx
 [lang] function_ctx_t
 [lang] function_ctx_new
 [lang] function_ctx_destroy
