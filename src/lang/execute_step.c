@@ -33,7 +33,7 @@ execute_generic(vm_t *vm) {
 
     function_t *function = function_new();
     function_ctx_t *ctx = function_ctx_new();
-    compile_step(vm, function, ctx);
+    compile_one(vm, function, ctx);
     function_build(function);
 
     size_t base_length = stack_length(vm->return_stack);
@@ -46,7 +46,7 @@ execute_generic(vm_t *vm) {
 }
 
 void
-execute_step(vm_t *vm) {
+execute_one(vm_t *vm) {
     if (execute_int(vm) ||
         execute_float(vm) ||
         execute_generic(vm))
@@ -55,5 +55,5 @@ execute_step(vm_t *vm) {
     }
 
     token_t *token = list_first(vm->token_list);
-    fprintf(stderr, "[execute_step] unknown token: %s\n", token->string);
+    fprintf(stderr, "[execute_one] unknown token: %s\n", token->string);
 }

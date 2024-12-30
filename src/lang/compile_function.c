@@ -14,7 +14,7 @@ compile_function(vm_t *vm) {
             return function;
         }
 
-        compile_step(vm, function, ctx);
+        compile_one(vm, function, ctx);
     }
 
     function_ctx_destroy(&ctx);

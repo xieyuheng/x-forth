@@ -91,12 +91,12 @@ compile_local_set_many(vm_t *vm, function_t *function, function_ctx_t *ctx) {
 }
 
 void
-compile_step(vm_t *vm, function_t *function, function_ctx_t *ctx) {
+compile_one(vm_t *vm, function_t *function, function_ctx_t *ctx) {
     if (compile_int(vm, function, ctx)) return;
     if (compile_float(vm, function, ctx)) return;
     if (compile_local_set_many(vm, function, ctx)) return;
     if (compile_generic(vm, function, ctx)) return;
 
     token_t *token = list_first(vm->token_list);
-    fprintf(stderr, "[compile_step] unknown token: %s\n", token->string);
+    fprintf(stderr, "[compile_one] unknown token: %s\n", token->string);
 }
