@@ -1,7 +1,7 @@
 #include "index.h"
 
 static bool
-execute_int_token(vm_t *vm) {
+execute_int(vm_t *vm) {
     token_t *token = list_first(vm->token_list);
     if (token->kind != INT_TOKEN) return false;
     if (!string_is_xint(token->string)) return false;
@@ -14,7 +14,7 @@ execute_int_token(vm_t *vm) {
 }
 
 static bool
-execute_float_token(vm_t *vm) {
+execute_float(vm_t *vm) {
     token_t *token = list_first(vm->token_list);
     if (token->kind != FLOAT_TOKEN) return false;
     if (!string_is_double(token->string)) return false;
@@ -27,7 +27,7 @@ execute_float_token(vm_t *vm) {
 }
 
 static bool
-execute_generic_token(vm_t *vm) {
+execute_generic(vm_t *vm) {
     token_t *token = list_first(vm->token_list);
     if (token->kind != GENERIC_TOKEN) return false;
 
@@ -47,9 +47,9 @@ execute_generic_token(vm_t *vm) {
 
 void
 execute_step(vm_t *vm) {
-    if (execute_int_token(vm) ||
-        execute_float_token(vm) ||
-        execute_generic_token(vm))
+    if (execute_int(vm) ||
+        execute_float(vm) ||
+        execute_generic(vm))
     {
         return;
     }

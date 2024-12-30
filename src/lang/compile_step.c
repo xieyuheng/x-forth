@@ -1,7 +1,7 @@
 #include "index.h"
 
 static bool
-compile_int_token(vm_t *vm, function_t *function, function_ctx_t *ctx) {
+compile_int(vm_t *vm, function_t *function, function_ctx_t *ctx) {
     (void) ctx;
 
     token_t *token = list_first(vm->token_list);
@@ -16,7 +16,7 @@ compile_int_token(vm_t *vm, function_t *function, function_ctx_t *ctx) {
 }
 
 static bool
-compile_float_token(vm_t *vm, function_t *function, function_ctx_t *ctx) {
+compile_float(vm_t *vm, function_t *function, function_ctx_t *ctx) {
     (void) ctx;
 
     token_t *token = list_first(vm->token_list);
@@ -31,7 +31,7 @@ compile_float_token(vm_t *vm, function_t *function, function_ctx_t *ctx) {
 }
 
 static bool
-compile_generic_token(vm_t *vm, function_t *function, function_ctx_t *ctx) {
+compile_generic(vm_t *vm, function_t *function, function_ctx_t *ctx) {
     (void) ctx;
 
     token_t *token = list_first(vm->token_list);
@@ -49,9 +49,9 @@ compile_generic_token(vm_t *vm, function_t *function, function_ctx_t *ctx) {
 
 void
 compile_step(vm_t *vm, function_t *function, function_ctx_t *ctx) {
-    if (compile_int_token(vm, function, ctx)) return;
-    if (compile_float_token(vm, function, ctx)) return;
-    if (compile_generic_token(vm, function, ctx)) return;
+    if (compile_int(vm, function, ctx)) return;
+    if (compile_float(vm, function, ctx)) return;
+    if (compile_generic(vm, function, ctx)) return;
 
     token_t *token = list_first(vm->token_list);
     fprintf(stderr, "[compile_step] unknown token: %s\n", token->string);
