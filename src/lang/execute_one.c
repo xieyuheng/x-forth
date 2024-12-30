@@ -47,12 +47,9 @@ execute_generic(vm_t *vm) {
 
 void
 execute_one(vm_t *vm) {
-    if (execute_int(vm) ||
-        execute_float(vm) ||
-        execute_generic(vm))
-    {
-        return;
-    }
+    if (execute_int(vm)) return;
+    if (execute_float(vm)) return;
+    if (execute_generic(vm)) return;
 
     token_t *token = list_first(vm->token_list);
     fprintf(stderr, "[execute_one] unknown token: %s\n", token->string);
