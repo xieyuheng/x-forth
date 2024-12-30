@@ -12,4 +12,3 @@ void function_print(const function_t *self, file_t *file);
 void function_print_with_cursor(const function_t *self, file_t *file, size_t cursor);
 
 void function_emit_call(function_t *self, mod_t *mod, const char *name);
-void function_emit_literal(function_t *self, value_t value);

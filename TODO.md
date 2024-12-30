@@ -1,6 +1,9 @@
 # local variable
 
+[lang] inline function_emit_call
+
 [lang] compile_local_variable -- use `( ... )` for local variable
+[lang] compile_generic_token -- lookup local index hash first to emit locaop compile
 
 # object
 

@@ -9,7 +9,7 @@ compile_int_token(vm_t *vm, const token_t *token, function_t *function, function
     if (!string_is_xint(token->string)) return false;
 
     value_t value = xint(string_parse_xint(token->string));
-    function_emit_literal(function, value);
+    function_add_op(function, (op_t *) literal_op_new(value));
     return true;
 }
 
@@ -22,7 +22,7 @@ compile_float_token(vm_t *vm, const token_t *token, function_t *function, functi
     if (!string_is_double(token->string)) return false;
 
     value_t value = xfloat(string_parse_double(token->string));
-    function_emit_literal(function, value);
+    function_add_op(function, (op_t *) literal_op_new(value));
     return true;
 }
 

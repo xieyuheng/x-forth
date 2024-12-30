@@ -87,8 +87,3 @@ function_emit_call(function_t *self, mod_t *mod, const char *name) {
 
     function_add_op(self, (op_t *) call_op_new(def));
 }
-
-void
-function_emit_literal(function_t *self, value_t value) {
-    function_add_op(self, (op_t *) literal_op_new(value));
-}
