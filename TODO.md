@@ -1,17 +1,34 @@
 # object
 
 [value] object_spec_t -- xobject use global address of object_spec_t as kind
-
-- learn from jai about definition of type
-
 [value] object_spec_t -- has name
 [value] object_spec_t -- has optional description
 
 # string
 
-xstring -- as xobject
+xstring_t -- has text and is_static -- static string will not be free-ed
 
-"..." for string
+xstring_new
+xstring_destroy
+
+xstring_free
+xstring_copy -- simple dup if the string is_static
+
+xstring_append -- consume arguments by calling xstring_free
+
+xstring_get -- (- string-t int-t -> string-t -) does NOT consume string
+
+- handle utf8
+
+[primitive] print -- handle string
+
+[lang] execute_string -- handle STRING_TOKEN
+[lang] compile_string -- handle STRING_TOKEN
+
+# char
+
+xchar
+xstring_get_char -- does NOT consume string
 
 # function
 
