@@ -1,6 +1,9 @@
 # object
 
 [value] object_spec_t -- xobject use global address of object_spec_t as kind
+
+- learn from jai about definition of type
+
 [value] object_spec_t -- has name
 [value] object_spec_t -- has optional description
 
