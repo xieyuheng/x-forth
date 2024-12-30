@@ -5,3 +5,4 @@ struct function_ctx_t {
 };
 
 function_ctx_t *function_ctx_new(void);
+void function_ctx_destroy(function_ctx_t **self_pointer);
