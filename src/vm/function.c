@@ -76,14 +76,3 @@ function_print_with_cursor(const function_t *self, file_t *file, size_t cursor) 
         }
     }
 }
-
-void
-function_emit_call(function_t *self, mod_t *mod, const char *name) {
-    const def_t *def = mod_find_def(mod, name);
-    if (def == NULL) {
-        fprintf(stderr, "[function_emit_call] undefined name: %s\n", name);
-        exit(1);
-    }
-
-    function_add_op(self, (op_t *) call_op_new(def));
-}

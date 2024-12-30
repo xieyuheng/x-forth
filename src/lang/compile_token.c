@@ -30,7 +30,13 @@ static bool
 compile_generic_token(vm_t *vm, const token_t *token, function_t *function, function_ctx_t *ctx) {
     (void) ctx;
 
-    function_emit_call(function, vm->mod, token->string);
+    const def_t *def = mod_find_def(vm->mod, token->string);
+    if (def == NULL) {
+        fprintf(stderr, "[function_emit_call] undefined name: %s\n", token->string);
+        exit(1);
+    }
+
+    function_add_op(function, (op_t *) call_op_new(def));
     return true;
 }
 
