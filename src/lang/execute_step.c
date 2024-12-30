@@ -30,11 +30,10 @@ static bool
 execute_generic_token(vm_t *vm) {
     token_t *token = list_first(vm->token_list);
     if (token->kind != GENERIC_TOKEN) return false;
-    (void) list_shift(vm->token_list);
 
     function_t *function = function_new();
     function_ctx_t *ctx = function_ctx_new();
-    compile_step(vm, token, function, ctx);
+    compile_step(vm, function, ctx);
     function_build(function);
 
     size_t base_length = stack_length(vm->return_stack);
