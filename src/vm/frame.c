@@ -1,16 +1,19 @@
 #include "index.h"
 
+#define LOCAL_ARRAY_SIZE 64
+
 struct frame_t {
     size_t cursor;
     const function_t *function;
+    array_t *local_array;
 };
-
 
 frame_t *
 frame_new(const function_t *function) {
     frame_t *self = new(frame_t);
     self->cursor = 0;
     self->function = function;
+    self->local_array = array_new(LOCAL_ARRAY_SIZE);
     return self;
 }
 
@@ -19,6 +22,7 @@ frame_destroy(frame_t **self_pointer) {
     assert(self_pointer);
     if (*self_pointer) {
         frame_t *self = *self_pointer;
+        array_destroy(&self->local_array);
         free(self);
         *self_pointer = NULL;
     }
