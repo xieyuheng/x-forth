@@ -10,6 +10,7 @@ compile_int_token(vm_t *vm, token_t *token, function_t *function, function_ctx_t
 
     value_t value = xint(string_parse_xint(token->string));
     function_add_op(function, (op_t *) literal_op_new(value));
+    token_destroy(&token);
     return true;
 }
 
@@ -23,6 +24,7 @@ compile_float_token(vm_t *vm, token_t *token, function_t *function, function_ctx
 
     value_t value = xfloat(string_parse_double(token->string));
     function_add_op(function, (op_t *) literal_op_new(value));
+    token_destroy(&token);
     return true;
 }
 
@@ -37,6 +39,7 @@ compile_generic_token(vm_t *vm, token_t *token, function_t *function, function_c
     }
 
     function_add_op(function, (op_t *) call_op_new(def));
+    token_destroy(&token);
     return true;
 }
 

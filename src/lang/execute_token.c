@@ -37,7 +37,6 @@ execute_generic_token(vm_t *vm, token_t *token) {
 
     function_ctx_destroy(&ctx);
     function_destroy(&function);
-    token_destroy(&token);
     return true;
 }
 

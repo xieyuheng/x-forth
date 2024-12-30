@@ -14,7 +14,6 @@ compile_function(vm_t *vm) {
         }
 
         compile_token(vm, token, function, ctx);
-        token_destroy(&token);
     }
 
     function_ctx_destroy(&ctx);
