@@ -1,5 +1,10 @@
 # local variable
 
+[lang] execute_step -- should take token form vm
+
+[lang] rename compile_token to compile_step
+[lang] compile_step -- should take token form vm
+
 [lang] compile_local_variable -- use `( ... )` for local variable
 [lang] compile_generic_token -- lookup local index hash first to emit locaop compile
 

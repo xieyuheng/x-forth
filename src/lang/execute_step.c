@@ -41,7 +41,7 @@ execute_generic_token(vm_t *vm, token_t *token) {
 }
 
 void
-execute_token(vm_t *vm, token_t *token) {
+execute_step(vm_t *vm, token_t *token) {
     if (execute_int_token(vm, token) ||
         execute_float_token(vm, token) ||
         execute_generic_token(vm, token))
@@ -49,5 +49,5 @@ execute_token(vm_t *vm, token_t *token) {
         return;
     }
 
-    fprintf(stderr, "[execute_token] unknown token: %s\n", token->string);
+    fprintf(stderr, "[execute_step] unknown token: %s\n", token->string);
 }
