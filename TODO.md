@@ -1,5 +1,7 @@
 # local variable
 
+[lang] compile_token -- should call token_destroy
+
 [lang] compile_local_variable -- use `( ... )` for local variable
 [lang] compile_generic_token -- lookup local index hash first to emit locaop compile
 
