@@ -1,5 +1,3 @@
-change comment to //
-
 # object
 
 [value] object_spec_t -- xobject use global address of object_spec_t as kind
