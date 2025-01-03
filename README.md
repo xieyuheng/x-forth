@@ -34,6 +34,10 @@ make clean    # clean up compiled files
 
 ## References
 
+**Inspirations**:
+
+- [forth](https://en.wikipedia.org/wiki/Forth_(programming_language))
+
 **Books**:
 
 - [scalable c](https://github.com/booksbyus/scalable-c)
