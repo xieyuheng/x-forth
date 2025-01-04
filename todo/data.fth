@@ -1,12 +1,12 @@
-claim list-t type-t -> type-t end
+claim list-t type-t -- type-t end
 define-data list-t element-t end
 // generate list-t list-t/element-t
 
-claim cons-list 'A list-t 'A -> 'A list-t end
+claim cons-list 'A list-t 'A -- 'A list-t end
 define-data cons-list tail head end
 // generate: cons-list cons-list/tail cons-list/head
 
-claim null-list -> 'A list-t end
+claim null-list -- 'A list-t end
 define-data null-list end
 // generate: null-list
 
