@@ -41,6 +41,17 @@ value_print(value_t value, file_t *file) {
         return;
     }
 
-    fprintf(file, "<0x%lx>", (uint64_t) value);
+    if (is_xobject(value)) {
+        object_t *object = to_object(value);
+        if (object->spec->print_fn) {
+            object->spec->print_fn(object, file);
+            return;
+        }
+
+        fprintf(file, "#<unknown-object 0x%p>", value);
+        return;
+    }
+
+    fprintf(file, "#<unknown-value 0x%p>", value);
     return;
 }

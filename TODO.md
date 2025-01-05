@@ -1,9 +1,3 @@
-# object
-
-[value] object_spec_t -- xobject use global address of object_spec_t as kind
-[value] object_spec_t -- has name
-[value] object_spec_t -- has optional description
-
 # string
 
 xstring_t -- has text and is_static -- static string will not be free-ed
@@ -34,7 +28,7 @@ xstring_get_char -- does NOT consume string
 
 function_t as xobject
 
-use `{ ... }` for function
+use `{ ... }` for function or `fn ... end`
 
 # record
 
